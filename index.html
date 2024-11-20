@@ -749,9 +749,285 @@ nav {
                 max-width: 150px;
             }
         }
+
+        /* Base Styles */
+.timeline-section {
+    min-height: 100vh;
+    padding: 80px 24px;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.timeline-wrapper {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.timeline-block {
+    flex: 1;
+    position: relative;
+    background: rgba(124, 58, 237, 0.02);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    background: linear-gradient(to right, var(--text-color), #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: rgba(124, 58, 237, 0.2);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -44px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #7c3aed;
+    border: 2px solid var(--bg-color);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+}
+
+.timeline-content {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-year {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(124, 58, 237, 0.1);
+    border-radius: 100px;
+    color: #a78bfa;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.timeline-title {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-subtitle {
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.timeline-desc {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .timeline-block {
+        padding: 20px;
+    }
+
+    .timeline-content {
+        max-width: 100%; /* Ensures it adapts to the screen width */
+        margin-left: 0; /* Aligns items properly for mobile */
+        padding: 16px; /* Slightly reduce padding for better fit */
+    }
+
+    .timeline-item::before {
+        left: -20px; /* Adjust bullet position for mobile screens */
+    }
+
+    .timeline {
+        padding-left: 20px; /* Reduce the timeline left padding */
+    }
+
+    .section-title {
+        font-size: 24px; /* Adjust title size for smaller screens */
+        margin-bottom: 24px;
+    }
+
+    .timeline-year {
+        font-size: 12px; /* Adjust year badge size */
+    }
+
+    .timeline-title {
+        font-size: 18px;
+    }
+
+    .timeline-subtitle {
+        font-size: 14px;
+    }
+
+    .timeline-desc {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-section {
+        padding: 40px 12px; /* Reduce padding for very small devices */
+    }
+
+    .timeline-content {
+        padding: 16px;
+    }
+
+    .timeline-item::before {
+        left: -15px; /* Fine-tune bullet alignment */
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .timeline-year {
+        font-size: 10px;
+    }
+
+    .timeline-title {
+        font-size: 16px;
+    }
+
+    .timeline-subtitle {
+        font-size: 12px;
+    }
+
+    .timeline-desc {
+        font-size: 11px;
+    }
+}
+
+
     </style>
 </head>
 <body>
+
+    <section class="timeline-section" id="resume">
+        <div class="timeline-container">
+            <div class="headers">
+                <h2>
+                    <i class="fas fa-briefcase"></i> Parcours Professional
+                </h2>
+            </div>
+            <div class="timeline-wrapper">
+                <!-- Education Timeline -->
+                <div class="timeline-block">
+                    <h2 class="section-title">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">2024 - 2025</span>
+                                <h3 class="timeline-title">Certification Full-Stack Java Angular</h3>
+                                <h4 class="timeline-subtitle">École Numérique Ahmed AL HANSALI (Simplon)</h4>
+                                <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Sep 2019 - Aug 2020</span>
+                                <h3 class="timeline-title">Technicien spécialisé de la maintenance en industrie agroalimentaire</h3>
+                                <h4 class="timeline-subtitle">ISIAO BENI MELLAL - Béni Mellal</h4>
+                                <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Sep 2019</span>
+                                <h3 class="timeline-title">Bacalaureat Science Physique</h3>
+                                <h4 class="timeline-subtitle">LYCEE EL KHAWARIZMI - SOUK SEBT</h4>
+                                <p class="timeline-desc">Focused on fundamental programming concepts and web
+                                    technologies. Completed internship at local tech company.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Timeline -->
+                <div class="timeline-block">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Jan 2023 - Avr 2023</span>
+                                <h3 class="timeline-title">Employé chez COSUMAR</h3>
+                                <h4 class="timeline-subtitle">Maintenance des machines industrielles</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">May 2021 - Dec 2022</span>
+                                <h3 class="timeline-title">Employé chez ChaabiCash</h3>
+                                <h4 class="timeline-subtitle">PRÉSIDENCE DE L'UNIVERSITÉ SULTAN MOULAY SLIMANE</h4>
+                                <p class="timeline-desc">Developed responsive websites and implemented modern UI/UX
+                                    designs. Collaborated with design team on multiple projects.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <span class="timeline-year">Dec 2020 - Mar 2021</span>
+                                    <h3 class="timeline-title"> Employé chez Cashplus</h3>
+                                    <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="containers">
         <div class="headers" id="Skills">
             <h1>My Skills</h1>
@@ -760,50 +1036,38 @@ nav {
         
         <div class="skills-grid">
             <div class="skill-card">
-                <img src="/my-portfolio/logos/figma.png" alt="Figma" class="skill-icon">
+                <img src="/logos/figma.png" alt="Figma" class="skill-icon">
                 <span class="skill-name">Figma</span>
             </div>
             
             <div class="skill-card">
-                <img src="/my-portfolio/logos/programing.png" alt="Angular" class="skill-icon">
+                <img src="/logos/programing.png" alt="Angular" class="skill-icon">
                 <span class="skill-name">Angular</span>
             </div>
             
             <div class="skill-card">
-                <img src="/my-portfolio/logos/springboot.png.png" alt="springboot" class="skill-icon">
+                <img src="/logos/springboot.png.png" alt="springboot" class="skill-icon">
                 <span class="skill-name">Spring Boot</span>
             </div>
             
             <div class="skill-card">
-                <img src="/my-portfolio/logos/pngwing.com.png" alt="PostgreSQL" class="skill-icon">
+                <img src="/logos/pngwing.com.png" alt="PostgreSQL" class="skill-icon">
                 <span class="skill-name">PostgreSQL</span>
             </div>
             
             <div class="skill-card">
-                <img src="/my-portfolio/logos/java.png" alt="java" class="skill-icon">
+                <img src="/logos/java.png" alt="java" class="skill-icon">
                 <span class="skill-name">Java</span>
             </div>
             
             <div class="skill-card">
-                <img src="/my-portfolio/logos/typescript.png" alt="JavaScript" class="skill-icon">
+                <img src="/logos/typescript.png" alt="JavaScript" class="skill-icon">
                 <span class="skill-name">TypeScript</span>
             </div>
         </div>
     </div>
 
-    <section id="Parcours" class="parcours">
-        <h2>Parcours</h2>
-        <div class="parcours-container">
-            <div class="parcours-section">
-                <h3>Education</h3>
-                <p>Details about education go here...</p>
-            </div>
-            <div class="parcours-section">
-                <h3>Experiences</h3>
-                <p>Details about experiences go here...</p>
-            </div>
-        </div>
-    </section>
+    
 
     <footer>
         <div class="copyright">
